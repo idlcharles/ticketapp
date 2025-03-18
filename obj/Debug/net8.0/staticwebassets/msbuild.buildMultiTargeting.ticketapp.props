@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ticketapp.props" />
+</Project>
