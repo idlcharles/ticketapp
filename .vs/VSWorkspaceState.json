@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Data",
+    "\\Models",
+    "\\Properties",
+    "\\Views",
+    "\\Views\\Shared",
+    "\\wwwroot",
+    "\\wwwroot\\css",
+    "\\wwwroot\\js",
+    "\\wwwroot\\lib"
+  ],
+  "SelectedNode": "\\Models\\Ticket.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,69 +1,73 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using ticketapp.Dados;
+using TicketSystemAPI.Data;
+using TicketSystemAPI.Models;
 
-[Route("api/tickets")]
-[ApiController]
-public class TicketController : ControllerBase
+namespace TicketSystemAPI.Controllers
 {
-    private readonly TicketDbContext _context;
-
-    public TicketController(TicketDbContext context)
+    [ApiController]
+    [Route("api/tickets")]
+    public class TicketController : ControllerBase
     {
-        _context = context;
-    }
+        private readonly TicketDbContext _context;
 
-    [HttpPost]
-    public async Task<ActionResult<Ticket>> CreateTicket([FromBody] Ticket ticket)
-    {
-        if (string.IsNullOrEmpty(ticket.Titulo) || string.IsNullOrEmpty(ticket.Descricao))
-            return BadRequest("Título e Descrição são obrigatórios!");
+        public TicketController(TicketDbContext context)
+        {
+            _context = context;
+        }
 
-        ticket.Status = "Aberto";
-        _context.Tickets.Add(ticket);
-        await _context.SaveChangesAsync();
+        [HttpGet]
+        public ActionResult<IEnumerable<Ticket>> GetTickets()
+        {
+            return Ok(_context.Tickets.ToList());
+        }
 
-        return CreatedAtAction(nameof(GetTicket), new { id = ticket.Id }, ticket);
-    }
+        [HttpGet("{id}")]
+        public ActionResult<Ticket> GetTicket(int id)
+        {
+            var ticket = _context.Tickets.Find(id);
+            if (ticket == null)
+                return NotFound("Ticket não encontrado.");
+            return Ok(ticket);
+        }
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Ticket>>> GetTickets()
-    {
-        return await _context.Tickets.ToListAsync();
-    }
+        [HttpPost]
+        public ActionResult<Ticket> CreateTicket([FromBody] Ticket newTicket)
+        {
+            newTicket.Status = "Aberto";
+            newTicket.DataCriacao = DateTime.Now;
+            _context.Tickets.Add(newTicket);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(GetTicket), new { id = newTicket.Id }, newTicket);
+        }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Ticket>> GetTicket(int id)
-    {
-        var ticket = await _context.Tickets.FindAsync(id);
-        if (ticket == null) return NotFound();
-        return ticket;
-    }
+        [HttpPut("{id}/status")]
+        public ActionResult UpdateTicketStatus(int id, [FromBody] string novoStatus)
+        {
+            var ticket = _context.Tickets.Find(id);
+            if (ticket == null)
+                return NotFound("Ticket não encontrado.");
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateTicket(int id, [FromBody] Ticket ticketUpdate)
-    {
-        var ticket = await _context.Tickets.FindAsync(id);
-        if (ticket == null) return NotFound();
+            if (novoStatus != "Aberto" && novoStatus != "Em Atendimento" && novoStatus != "Atendido")
+                return BadRequest("Status inválido.");
 
-        ticket.Status = ticketUpdate.Status;
-        await _context.SaveChangesAsync();
+            ticket.Status = novoStatus;
+            _context.SaveChanges();
+            return Ok(ticket);
+        }
 
-        return NoContent();
-    }
+        [HttpDelete("{id}")]
+        public ActionResult DeleteTicket(int id)
+        {
+            var ticket = _context.Tickets.Find(id);
+            if (ticket == null)
+                return NotFound("Ticket não encontrado.");
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteTicket(int id)
-    {
-        var ticket = await _context.Tickets.FindAsync(id);
-        if (ticket == null) return NotFound();
-
-        _context.Tickets.Remove(ticket);
-        await _context.SaveChangesAsync();
-
-        return NoContent();
+            _context.Tickets.Remove(ticket);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }

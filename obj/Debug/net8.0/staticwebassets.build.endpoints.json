@@ -4923,6 +4923,88 @@
       ]
     },
     {
+      "Route": "placeholder.txt.gp8q9h9exd.txt",
+      "AssetFile": "placeholder.txt.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bLRdmjLEKc6vTxkrMfzAqHQubkCGuD4OOWNkqAKcIk0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 19 Mar 2025 21:22:17 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gp8q9h9exd"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bLRdmjLEKc6vTxkrMfzAqHQubkCGuD4OOWNkqAKcIk0="
+        },
+        {
+          "Name": "label",
+          "Value": "placeholder.txt.txt"
+        }
+      ]
+    },
+    {
+      "Route": "placeholder.txt.txt",
+      "AssetFile": "placeholder.txt.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "38"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bLRdmjLEKc6vTxkrMfzAqHQubkCGuD4OOWNkqAKcIk0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 19 Mar 2025 21:22:17 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bLRdmjLEKc6vTxkrMfzAqHQubkCGuD4OOWNkqAKcIk0="
+        }
+      ]
+    },
+    {
       "Route": "ticketapp.8pcj30hily.styles.css",
       "AssetFile": "ticketapp.styles.css",
       "Selectors": [],

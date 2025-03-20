@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Charles\\source\\repos\\ticketapp\\ticketapp.csproj": {}
+    "C:\\Users\\Charles\\Ticket.app\\ticketapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Charles\\source\\repos\\ticketapp\\ticketapp.csproj": {
+    "C:\\Users\\Charles\\Ticket.app\\ticketapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Charles\\source\\repos\\ticketapp\\ticketapp.csproj",
+        "projectUniqueName": "C:\\Users\\Charles\\Ticket.app\\ticketapp.csproj",
         "projectName": "ticketapp",
-        "projectPath": "C:\\Users\\Charles\\source\\repos\\ticketapp\\ticketapp.csproj",
+        "projectPath": "C:\\Users\\Charles\\Ticket.app\\ticketapp.csproj",
         "packagesPath": "C:\\Users\\Charles\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Charles\\source\\repos\\ticketapp\\obj\\",
+        "outputPath": "C:\\Users\\Charles\\Ticket.app\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,9 +51,21 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
