@@ -720,18 +720,6 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1117"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022hjIBkvmgxQXbNXK3B9YQ3t06RwLuQSQzC/dpvuB/lMk=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Mar 2025 03:44:44 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ticketapp/placeholder.txt.gp8q9h9exd.txt">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\placeholder.txt.txt'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gp8q9h9exd"},{"Name":"integrity","Value":"sha256-bLRdmjLEKc6vTxkrMfzAqHQubkCGuD4OOWNkqAKcIk0="},{"Name":"label","Value":"_content/ticketapp/placeholder.txt.txt"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"38"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022bLRdmjLEKc6vTxkrMfzAqHQubkCGuD4OOWNkqAKcIk0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 19 Mar 2025 21:22:17 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ticketapp/placeholder.txt.txt">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\placeholder.txt.txt'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-bLRdmjLEKc6vTxkrMfzAqHQubkCGuD4OOWNkqAKcIk0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"38"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022bLRdmjLEKc6vTxkrMfzAqHQubkCGuD4OOWNkqAKcIk0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 19 Mar 2025 21:22:17 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ticketapp/ticketapp.8pcj30hily.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ticketapp.8pcj30hily.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

@@ -1,18 +1,20 @@
-﻿namespace TicketSystemAPI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ticketapp.Models
 {
     public class Ticket
     {
+        [Key] // Define como chave primária
         public int Id { get; set; }
-        public string Titulo { get; set; }
-        public string Descricao { get; set; }
-        public string Status { get; set; } // "Aberto", "Em Atendimento", "Atendido"
-        public DateTime DataCriacao { get; set; }
-        public class Ticket
-        {
-            public string Titulo { get; set; } = "";
-            public string Descricao { get; set; } = "";
-            public string Status { get; set; } = "";
 
-        }
+        [Required]
+        public string Titulo { get; set; }
+
+        [Required]
+        public string Descricao { get; set; }
+
+        public string Status { get; set; } = "Aberto"; // Padrão: Aberto
+
+        public DateTime DataCriacao { get; set; } = DateTime.Now;
     }
 }
